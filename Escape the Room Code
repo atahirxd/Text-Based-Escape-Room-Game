@@ -1,0 +1,295 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <windows.h>
+#include <mmsystem.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+#pragma comment(lib, "WINMM.LIB")
+void playMusic();
+void main()
+{
+int option1, option2 = 0, option3, option4, option5, remark1,
+remark2;
+char name[30], user[50] = "", answer[50] = "", hint[50] = "";
+printf("Do you want music?\nYes '1'\t\tNo '0'\n\n");
+scanf_s("%d", &option1);
+getchar();
+switch (option1)
+{
+case 1: playMusic(); break;
+default:;
+}
+system("cls");
+printf("ESCAPE THE ROOM\n\n");
+Sleep(6000);
+printf("by Ayesha Tahir\n");
+Sleep(3000);
+printf("CMS 340499\n");
+Sleep(2500);
+printf("BSCS - 10A\n");
+Sleep(5500);
+printf("FoCP Semester Project\n\n");
+system("pause");
+while (option2 != 4) //main menu starts
+{
+strcpy(user, "");
+strcpy(answer, "");
+system("cls");
+printf("ESCAPE THE ROOM\n\nMenu\n\nNew
+game\t'1'\nRules\t\t'2'\nCredits\t\t'3'\nExit\t\t'4'\n\n");
+scanf_s("%d", &option2);
+getchar();
+if (option2 == 3) //credits
+{
+system("cls");
+printf("2020 Ayesha Tahir All Rights Reserved\nBSCS10A\nCMS 340499\n\nBack '1'\n\n");
+scanf_s("%d", &option3);
+getchar();
+}
+else if (option2 == 2) //rules
+{
+system("cls");
+printf("Welcome to Escape the Room.\nThere's no time
+to waste. There are two rules. Solve the puzzles and get out. \n\nBack
+'1'\n\n");
+scanf_s("%d", &option3);
+getchar();
+}
+else if (option2 == 4)
+break;
+else if (option2 == 1&& (strcmp(user, "0")) != 0)
+//new game
+{
+system("cls");
+printf("Are\n");
+Sleep(1500);
+printf("You\n");
+Sleep(1500);
+printf("Ready?\n");
+Sleep(1500);
+printf("(There's no going back now.)\n\n");
+Sleep(1000);
+system("pause");
+system("cls");
+for (int i = 0; i < 3; i++)
+{
+printf("Loading.\n");
+Sleep(1000);
+system("cls");
+printf("Loading..\n");
+Sleep(1000);
+system("cls");
+printf("Loading...\n");
+Sleep(1000);
+system("cls");
+}
+if (option1 == 1) //game starts
+playMusic();
+Sleep(6000);
+printf("\"Why hello there, stranger.\"\n\n");
+Sleep(3000);
+printf("\"Odd to see a human here.\"\n\n");
+Sleep(3000);
+printf("\"Hmm? So you're stuck in this room and
+can't seem to get out? Ahh... I see.\"\n\n");
+Sleep(3000);
+printf("\"Well, you've entered the ESCAPE ROOM.
+The rules are simple. Solve some puzzles, 10 to be exact, and you're
+good to go! Remember to press 0 to EXIT.\"\n\n");
+Sleep(3000);
+system("pause");
+system("cls");
+printf("\"My name is Vincent. I am the master of
+this realm. Enter your name, mortal.\"\n\nYour name: ");
+gets_s(name, 30);
+printf("\n\nWelcome, %s! May the strings of fate
+be ever in your favour...!\n\n", name);
+system("pause");
+system("cls");
+srand(time(NULL));
+for (int i = 1; i <= 10&& (strcmp(user, "0")) !=
+0; i++) //questions start
+{
+switch (i)
+{
+case 1: printf("Q.1) Dare trespass my
+threshold?\nDon't dream you shall flee\nThe strongest, the swiftest,
+cannot evade me.\nI'll seize you and crush you and wrench you
+apart,\nThough no one may gaze on my singular heart.");
+strcpy(answer,"black hole");
+strcpy(hint, "This requires a lot
+of... space.");
+break;
+case 2: printf("Q.2) Dipping, glinting,
+gliding by,\nRainbow - fretted, wrought of breath.\nI live only while
+I fly -\nEarth's rough kiss my sudden death.");
+strcpy(answer, "soap bubble");
+strcpy(hint, "I exist in bathtubs.");
+break;
+case 3: printf("Q.3) I'm in you,\nBut not
+in him,\nI go up,\nBut not down,\nI'm in the colosseum,\nBut not a
+tower,\nI'm in a puzzle,\nBut not a riddle.");
+strcpy(answer, "u");
+strcpy(hint, "Look for you. The answer
+is a single letter.");
+break;
+case 4: printf("Q.4) It can not be seen
+whenever it's there\nIt fills up a room, it's much like the air.\nIt
+can not be touched, there's nothing to hear\nIt is quite harmless,
+there's nothing to fear.");
+strcpy(answer, "darkness");
+strcpy(hint, "The more of me there is,
+the less you can see.");
+break;
+case 5: printf("Q.5) When I'm young I'm
+tall\nWhen I'm old I'm short\nWhen I'm alive I glow\nBecause of your
+breath I die\nWhat am I?");
+strcpy(answer, "candle");
+strcpy(hint, "I carry flames.");
+break;
+case 6: printf("Q.6) I go around in
+circles,\nbut always go straight ahead.\nI never ever complain,\nno
+matter where I am led.");
+strcpy(answer, "wheel");
+strcpy(hint, "You'll find me on the
+road.");
+break;
+case 7: printf("Q.7) Glittering
+points\nThat downward thrust,\nSparkling spears\nThat never rust.");
+strcpy(answer, "icicle");
+strcpy(hint, "You'll find me where
+it's cold.");
+break;
+case 8: printf("Q.8) Until I am measured I
+am not known.\nYet how you miss me when I have flown.");
+strcpy(answer, "time");
+strcpy(hint, "Look at the clock.");
+break;
+case 9: printf("Q.9) Pronounced as one
+letter,\nAnd written with three,\nTwo letters there are,\nAnd two only
+in me.\nI'm double, I'm single,\nI'm black blue and gray,\nI'm read
+from both ends,\nAnd the same either way.");
+strcpy(answer, "eye");
+strcpy(hint, "Are you even seeing
+this?");
+break;
+case 10: printf("Q.10) I am a white box
+having no key or any lid.\nYet there is a golden treasure inside
+it.\nWhat am I?");
+strcpy(answer, "egg");
+strcpy(hint, "I am a breakfast
+food.");
+break;
+case 11: printf("Q.11) Only one color, but
+not one size.\nStuck at the bottom, yet I easily fly.\nPresent in sun,
+but not in rain.\nDoing no harm, and feeling no pain.\nWhat am I?");
+strcpy(answer, "shadow");
+strcpy(hint, "I'm a friend who follows
+you in the day and some times in the night, if you shine the right
+light.");
+break;
+case 12: printf("Q.12) Poke your fingers in
+my eyes\nand I will open wide my jaws.\nLinen cloth, quills, or
+paper,\nI will devour them all.\nWhat am I?");
+strcpy(answer, "scissors");
+strcpy(hint, "Don't you get such a
+feeling when you cut something out of your life?");
+break;
+}
+printf("\n\nYour answer: ");
+//user input answer
+gets_s(user, 50);
+int j = 0;
+while ((strcmp(user,answer))!=0)
+//loop to run while answer isn't correct
+{
+if ((strcmp(user, "0")) == 0)
+//if user wants to exit game to the menu
+break;
+if (user[0] == toupper(answer[0]))
+//condition for first letter capital
+{
+int count = 0;
+for (int i = 1; answer[i] !=
+'\0'; i++)
+{
+if (answer[i] != user[i])
+count++;
+}
+if (count == 0)
+break;
+}
+remark1 = 1 + rand() % 5;
+//generate negative remark
+switch (remark1)
+{
+case 1:printf("\n\n\"Hahaha, what a
+shame, %s.\"", name); break;
+case 2:printf("\n\n\"Try harder,
+dimwit.\""); break;
+case 3: printf("\n\n\"It seems we've
+stumbled upon a joke of a challenger.\""); break;
+case 4: printf("\n\n\"You entertain
+me, %s.\"", name); break;
+default: printf("\n\n\"Are all humans
+this... intelligent?\"");
+}
+if (j == 4)
+printf("\n\nHINT: %s",hint);
+printf("\n\nYour answer: ");
+gets_s(user,50);
+j++;
+}
+if ((strcmp(user, "0")) != 0)
+//generate positive remark
+{
+remark2 = 1 + rand() % 5;
+switch (remark2)
+{
+case 1:printf("\n\n\"You're a
+formidable opponent, %s.\"", name); break;
+case 2:printf("\n\n\"Hmm... well
+done.\""); break;
+case 3: printf("\n\n\"Hm.\""); break;
+case 4: printf("\n\n\"Amusing, to say
+the least.\""); break;
+default: printf("\n\n\"...I'm
+impressed, %s.\"", name);
+}
+printf("\n\n");
+system("pause");
+system("cls");
+}
+if ((strcmp(user, "0")) == 0)
+{
+printf("\n\n\"You wish to exit?
+Alright then. Until next time.\"\n\n");
+Sleep(2000);
+system("pause");
+system("cls");
+}
+}
+if ((strcmp(user, "0")) != 0)
+{
+Sleep(3000);
+printf("\"Congratulations, %s!\"\n\n",
+name);
+Sleep(2000);
+printf("\"You have solved my puzzles with
+success. You are a force to be reckoned with.\"\n\n");
+Sleep(2000);
+printf("\"You have ESCAPED THE ROOM. Maybe
+we'll see each other in the distant future. Farewell.\"\n\n");
+Sleep(2000);
+system("pause");
+}
+}
+}
+}
+void playMusic()
+{
+PlaySound(TEXT("bgmusic.wav"), NULL, SND_FILENAME | SND_ASYNC |
+SND_LOOP);
+}
